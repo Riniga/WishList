@@ -1,0 +1,21 @@
+**************************************************
+ID: 1 
+Name: FirstVersion
+Content:
+- Create branches and set up a branching strategy
+- Add source with database (as starting point)
+- Setup build and deploy script
+- Import current code make it work
+**************************************************
+ID: 2 
+Name: RefactorFirstVersion
+Content:
+- Refactor the code
+**************************************************
+ID: 3
+Name: ResponsiveDesign
+Content:
+- Redisign to work on mobile phone
+**************************************************
+
+
