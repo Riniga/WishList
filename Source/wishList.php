@@ -42,7 +42,8 @@ include 'dbconn.php';
 	
 	<div id="div-1">
 	<div id="div-1-main">
-	<body onLoad="document.forms.edit.editWish.focus()">
+
+	<body>
 	<h1><?='Önskelistan'?></h1>
 		
 		<?='Skapa din egen önskelista och se vad din familj önskar sig.'?><br>
