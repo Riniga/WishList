@@ -1,5 +1,5 @@
 <?php
-include 'settings.php';
+include '../settings.php';
 
 if(!mysql_connect($sqlhostname,$sqlusername, $sqlpassword))
 {

@@ -1,7 +1,7 @@
 <?php
 session_start(); //we're using sessions so this is required!
 
-if($_REQUEST['do'] == "logout") {
+if(isset($_REQUEST['do']) == "logout") {
 	unset($_SESSION['loggedin']);
 	unset($_SESSION['username']);
 	unset($_SESSION['userid']);
@@ -16,11 +16,11 @@ include 'dbconn.php';
 
 <html>
 <head>
-<title>Önskelistan</title>
+<title>Ã–nskelistan</title>
 <link href="wishlist.css" rel="stylesheet" type="text/css">	
 </head>
 
-	<?
+	<?php
 	
 	//    Copyright (C) 2002/2003 Kai Seidler, oswald@apachefriends.org
 	//
@@ -44,15 +44,15 @@ include 'dbconn.php';
 	<div id="div-1-main">
 
 	<body>
-	<h1><?='Önskelistan'?></h1>
+	<h1><?='Ã–nskelistan'?></h1>
 		
-		<?='Skapa din egen önskelista och se vad din familj önskar sig.'?><br>
-		<?='Bocka av det du tänker köpa. Du ser ej vad andra har '?><br>
-		<?='bockat av, reserverat, på din egen lista.'?>
-	<?
+		<?='Skapa din egen Ã¶nskelista och se vad din familj Ã¶nskar sig.'?><br>
+		<?='Bocka av det du tÃ¤nker kÃ¶pa. Du ser ej vad andra har '?><br>
+		<?='bockat av, reserverat, pÃ¥ din egen lista.'?>
+	<?php
 	
 	
-	if($_POST['selectedUser'] != "") {
+	if(isset($_POST['selectedUser']) != "") {
 	$_SESSION['selecteduser']=$_POST['selectedUser'];
 	}
 	
@@ -71,7 +71,7 @@ include 'dbconn.php';
 	}
 	
 	?>
-	<p><h2><?=$name.(endsWith($name,'s') ? "" : "s").' önskelista'?></br>
+	<p><h2><?php=$name.(endsWith($name,'s') ? "" : "s").' Ã¶nskelista'?></br>
 	<a href="wishList.php?do=logout"><small>[logout]</small></a></h2>
 	
 	<div id="div-1-main-left">
@@ -79,9 +79,9 @@ include 'dbconn.php';
 		<table border=0 cellpadding=0 cellspacing=0 >
 			<tr bgcolor=#f87820>
 				<td><img src=img/blank.gif width=10 height=25></td>
-				<td class=tabhead><img src=img/blank.gif width=200 height=6><br> <b><?='Önskan'?></b></td>
+				<td class=tabhead><img src=img/blank.gif width=200 height=6><br> <b><?='Ã–nskan'?></b></td>
 				<?
-				if($logedinuser) {
+				if(isset($logedinuser) {
 					echo "<td class=tabhead><img src=img/blank.gif width=50 height=6><br> <b>Ta bort</b></td>";
 				} else {
 					echo "<td class=tabhead><img src=img/blank.gif width=50 height=6><br><span colspan=2><b>Reservera</b></span></td>";
@@ -95,8 +95,8 @@ include 'dbconn.php';
 	<?
 	if($_REQUEST['wish']!="")
 	{
-		$wish=htmlentities($_REQUEST['wish']);
-		$link=htmlentities($_REQUEST['link']);
+		$wish=htmlentities(isset($_REQUEST['wish']));
+		$link=htmlentities(isset($_REQUEST['link']));
 		mysql_query("INSERT INTO wishlists (wish,link,userid) VALUES('".$wish."','".$link."',".$_SESSION['selecteduser'].");");
 	}
 
@@ -176,19 +176,19 @@ include 'dbconn.php';
 		}
 
 		if($logedinuser || $_REQUEST['redigera']=="true") {
-			echo "<td class=tabval><a onclick=\"return confirm('Ta bort önskning?');\" href=wishList.php?action=del&id=".$row['id']."><span class=red>[".'RADERA'."]</span></a></td>";
+			echo "<td class=tabval><a onclick=\"return confirm('Ta bort Ã¶nskning?');\" href=wishList.php?action=del&id=".$row['id']."><span class=red>[".'RADERA'."]</span></a></td>";
 		} else {
 			if($_SESSION['userid'] == $row['bought'] || $row['bought'] == 0) {
-				echo "<td class=".$rowstyle."><a class='sel' onclick=\"return confirm('".$mark." ".$row['wish']." som reserverad?');\" href=wishList.php?action=choose&id=".$row['id']."&bought=".$row['bought']."><span class=".$rowcolor.">[".'KÖPA'."]</span></a></td>";
+				echo "<td class=".$rowstyle."><a class='sel' onclick=\"return confirm('".$mark." ".$row['wish']." som reserverad?');\" href=wishList.php?action=choose&id=".$row['id']."&bought=".$row['bought']."><span class=".$rowcolor.">[".'KÃ–PA'."]</span></a></td>";
 			} else {
-				echo "<td class=".$rowstyle."><span class=".$rowcolor.">[".'KÖPA'."]</span></a></td>";
+				echo "<td class=".$rowstyle."><span class=".$rowcolor.">[".'KÃ–PA'."]</span></a></td>";
 			}
 		}
 			
 		echo "<td class=tabval></td>";
 			
 		if($logedinuser || ($selectedUser['familyid'] == $_SESSION['userid'])) {
-			echo "<td class=tabval><a onclick=\"return confirm('Redigera denna önskning?\\n".$row["wish"]."')
+			echo "<td class=tabval><a onclick=\"return confirm('Redigera denna Ã¶nskning?\\n".$row["wish"]."')
 				;\" href=wishList.php?action=edit&id=".$row['id']."><img src=img/edit.gif></a></td>";
 		} else {
 			echo "<td class=tabval></td>";
@@ -205,10 +205,10 @@ include 'dbconn.php';
 
 	if(($selectedUser['familyid'] == $_SESSION['userid']) && !$logedinuser) {?>
 		<a href="wishList.php?redigera=true">Redigera?</a>
-	<?}
+	<?php}
 	
 	if ($logedinuser) {
-		echo "<small><a href='shoppingList.php'>".$name.(endsWith($name,'s') ? "" : "s")." inköpslista</a></small>";
+		echo "<small><a href='shoppingList.php'>".$name.(endsWith($name,'s') ? "" : "s")." inkÃ¶pslista</a></small>";
 		
 		$select_keyword = mysql_query("SELECT COUNT(userid) AS amount FROM relatives WHERE userid='".$_SESSION['userid']."'");
 		
@@ -247,22 +247,22 @@ include 'dbconn.php';
 
 	<div id="div-1-c">
 	<?
-	if($logedinuser || ($selectedUser['familyid'] == $_SESSION['userid'])) {
+	if(isset($logedinuser) || (isset($selectedUser['familyid']) == isset($_SESSION['userid']))) {
 		
-		if($edit) {
+		if(isset($edit) {
 
 		$query = mysql_query("SELECT wish,link FROM wishlists WHERE id='".$editId."'");
 		$wishToEdit = mysql_fetch_array($query);
 		?>
 			
 		<form action=wishList.php name=edit method=get>
-			<input type=hidden name=wishId value=<?=$editId?>>
+			<input type=hidden name=wishId value=<?php=isset($editId)?>>
 			<table border=0 cellpadding=2 cellspacing=0>
 				<tr>
-					<td style="text-align:right">Önskan:</td><td><input class=edit type=text size=40 name=editWish value="<?=$wishToEdit['wish']?>"></td>
+					<td style="text-align:right">Ã–nskan:</td><td><input class=edit type=text size=40 name=editWish value="<?php=isset($wishToEdit['wish'])?>"></td>
 				</tr>
 				<tr>
-					<td style="text-align:right">ev. Länk:</td><td><input class=edit type=url size=40 name=editLink value=<?=$wishToEdit['link']?>></td>
+					<td style="text-align:right">ev. LÃ¤nk:</td><td><input class=edit type=url size=40 name=editLink value=<?php=isset($wishToEdit['link'])?>></td>
 				</tr>
 				<tr>
 					<td></td><td><input type=submit border=0 name=editWishList value="Uppdatera"></td>
@@ -273,16 +273,16 @@ include 'dbconn.php';
 		<? } else {?>
 		
 		<form action=wishList.php method=get>
-			<input type=hidden name=usrid value=<?=$usrid?>>
+			<input type=hidden name=usrid value=<?php=isset($usrid)?>>
 			<table border=0 cellpadding=2 cellspacing=0>
 				<tr>
-					<td style="text-align:right">Önskan:</td><td><input type=text size=40 name=wish></td>
+					<td style="text-align:right">Ã–nskan:</td><td><input type=text size=40 name=wish></td>
 				</tr>
 				<tr>
-					<td style="text-align:right">ev. Länk:</td><td><input type=url size=40 name=link></td>
+					<td style="text-align:right">ev. LÃ¤nk:</td><td><input type=url size=40 name=link></td>
 				</tr>
 				<tr>
-					<td></td><td><input type=submit border=0 name=wishlist value="Lägg till"></td>
+					<td></td><td><input type=submit border=0 name=wishlist value="LÃ¤gg till"></td>
 				</tr>
 			</table>
 		</form>

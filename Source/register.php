@@ -13,7 +13,7 @@ if($_POST['register']) {
 	$lastname=mysql_real_escape_string($_POST['lastname']);
 
 	if ($password1 != $password2) {
-		echo "<h3 style='color:red;'>".'Lösenorden matchar ej! Försök igen!'."</h3>";
+		echo "<h3 style='color:red;'>".'LÃ¶senorden matchar ej! FÃ¶rsÃ¶k igen!'."</h3>";
 		 //login again
 	} else {
 		$password=sha1($password1);
@@ -29,25 +29,25 @@ if($_POST['register']) {
 
 <html>
 <head>
-<title>Önskelistan</title>
+<title>Ã–nskelistan</title>
 <link href="wishlist.css" rel="stylesheet" type="text/css">
 </head>
 
 <div id="div-1">
 <div id="div-1-main">
 <body>
-<h1><?='Önskelistan'?></h1>
+<h1><?='Ã–nskelistan'?></h1>
 
-<?='Skapa din egen önskelista och se vad din familj önskar sig.'?><br>
-<?='Bocka av det du tänker köpa. Du ser ej vad som är '?><br> 
-<?='avbockat på din egen lista.'?><p>
+<?='Skapa din egen Ã¶nskelista och se vad din familj Ã¶nskar sig.'?><br>
+<?='Bocka av det du tÃ¤nker kÃ¶pa. Du ser ej vad som Ã¤r '?><br> 
+<?='avbockat pÃ¥ din egen lista.'?><p>
 
 <form action=register.php method=post>
 <table border=0 cellpadding=2 cellspacing=0>
 <tr><th colspan="2"><h2>Registrering</h2></th></tr>
-<tr><td style="text-align:right">Användarnamn: </td><td><input type=text size=30 name=username value=<?=$username ?>></td></tr>
-<tr><td style="text-align:right">Lösenord: </td><td><input type="password" size=30 name=pass1></td></tr>
-<tr><td style="text-align:right">Upprepa Lösenord: </td><td><input type="password" size=30 name=pass2></td></tr>
+<tr><td style="text-align:right">AnvÃ¤ndarnamn: </td><td><input type=text size=30 name=username value=<?=$username ?>></td></tr>
+<tr><td style="text-align:right">LÃ¶senord: </td><td><input type="password" size=30 name=pass1></td></tr>
+<tr><td style="text-align:right">Upprepa LÃ¶senord: </td><td><input type="password" size=30 name=pass2></td></tr>
 <tr><td style="text-align:right">Namn: </td><td><input type=text size=30 name=name value=<?=$name ?>></td></tr>
 <tr><td style="text-align:right">Efternamn: </td><td><input type=text size=30 name=lastname value=<?=$lastname ?>></td></tr>
 <tr><td></td><td><input type=submit border=0 name=register value="Registrera"></td></tr>

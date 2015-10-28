@@ -22,7 +22,7 @@ if($_POST['keyword'] != "" ) {
 ?>
 <html>
 <head>
-<title>Önskelistan</title>
+<title>Ã–nskelistan</title>
 <link href="wishlist.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -30,12 +30,12 @@ if($_POST['keyword'] != "" ) {
 <div id="div-1-main">
 
 <body>
-<h1><?='Önskelistan'?></h1>
+<h1><?='Ã–nskelistan'?></h1>
 
-<?='För att göra din önskelista tillgänglig för övriga i'?><br>
-<?='din familj måste du lägga till ett gemensamt nyckel-ord'?><br>
-<?='som ni gemensamt kommit överens om. Alla som angett detta'?><br>
-<?='ord kommer kunna ta del av varandras önskelistor'?>
+<?='FÃ¶r att gÃ¶ra din Ã¶nskelista tillgÃ¤nglig fÃ¶r Ã¶vriga i'?><br>
+<?='din familj mÃ¥ste du lÃ¤gga till ett gemensamt nyckel-ord'?><br>
+<?='som ni gemensamt kommit Ã¶verens om. Alla som angett detta'?><br>
+<?='ord kommer kunna ta del av varandras Ã¶nskelistor'?>
 
 <h2>Ange familjens nyckel-ord</h2>
 

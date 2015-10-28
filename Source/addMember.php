@@ -21,17 +21,17 @@ if($_POST['register']) {
 
 <html>
 <head>
-<title>Önskelistan</title>
+<title>Ã–nskelistan</title>
 <link href="wishlist.css" rel="stylesheet" type="text/css">
 </head>
 
 <div id="div-1">
 <div id="div-1-main">
 <body>
-<h1><?='Önskelistan'?></h1>
-<?='Lägg till ny anv&auml;ndare. Du loggar fortfarande in'?><br>
-<?='med ditt konto men du administrerar och kan lägga till '?><br>
-<?='önskningar på den nya personens lista.'?><p>
+<h1><?='Ã–nskelistan'?></h1>
+<?='LÃ¤gg till ny anv&auml;ndare. Du loggar fortfarande in'?><br>
+<?='med ditt konto men du administrerar och kan lÃ¤gga till '?><br>
+<?='Ã¶nskningar pÃ¥ den nya personens lista.'?><p>
 
 <form action=addMember.php method=post>
 <table border=0 cellpadding=2 cellspacing=0>
@@ -42,7 +42,7 @@ if($_POST['register']) {
 </table>
 </form>
 
-<a href="wishList.php"><small>Till önskelistor</small></a>
+<a href="wishList.php"><small>Till Ã¶nskelistor</small></a>
 </body>
 </div>
 </div>

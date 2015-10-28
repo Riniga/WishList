@@ -10,23 +10,23 @@ include 'dbconn.php';
 
 <html>
 <head>
-<title>Önskelistan</title>
+<title>Ã–nskelistan</title>
 <link href="wishlist.css" rel="stylesheet" type="text/css">	
 </head>
 	
 	<div id="div-1">
 	<div id="div-1-main">
 	<body>
-	<h1><?='Önskelistan'?></h1>
+	<h1><?='Ã–nskelistan'?></h1>
 		
-		<?='Här kan du se en samlad lista över önskningar du reserverat'?><br>
-		<?='att köpa. När du köpt en present kan du klicka på present'?><br>
-		<?='ikonen så den blir struken från listan.'?><br> 
-		<?='(Det går bra att ångra gjorda val såsom reservationer samt köp)'?>
+		<?='HÃ¤r kan du se en samlad lista Ã¶ver Ã¶nskningar du reserverat'?><br>
+		<?='att kÃ¶pa. NÃ¤r du kÃ¶pt en present kan du klicka pÃ¥ present'?><br>
+		<?='ikonen sÃ¥ den blir struken frÃ¥n listan.'?><br> 
+		<?='(Det gÃ¥r bra att Ã¥ngra gjorda val sÃ¥som reservationer samt kÃ¶p)'?>
 	<?
 	$name = $_SESSION['name'];
 	?>
-	<p><h2><?=$name.(endsWith($name,'s') ? "" : "s").' inköpslista'?></br>
+	<p><h2><?=$name.(endsWith($name,'s') ? "" : "s").' inkÃ¶pslista'?></br>
 	<a href="wishList.php?do=logout"><small>[logout]</small></a></h2>
 	
 	<div id="div-1-main-left">
@@ -36,11 +36,11 @@ include 'dbconn.php';
 				<td><img src=img/blank.gif width=10 height=25></td>
 				<td class=tabhead><img src=img/blank.gif width=50 height=6><br> <b>Namn</b></td>
  				<td class=tabhead><img src=img/blank.gif width=10 height=6><br> </td>
-				<td class=tabhead><img src=img/blank.gif width=80 height=6><br> <b>Önskan</b></td>
+				<td class=tabhead><img src=img/blank.gif width=80 height=6><br> <b>Ã–nskan</b></td>
  				<td class=tabhead><img src=img/blank.gif width=10 height=6><br> </td>
 				<td class=tabhead><img src=img/blank.gif width=50 height=6><br> <b>Avboka</b></td>
  				<td class=tabhead><img src=img/blank.gif width=10 height=6><br> </td>
- 				<td class=tabhead><img src=img/blank.gif width=10 height=6><br> <b>Köpt</b></td>
+ 				<td class=tabhead><img src=img/blank.gif width=10 height=6><br> <b>KÃ¶pt</b></td>
 				<td><img src=img/blank.gif width=10 height=25></td>
 			</tr>
 	<?
@@ -141,7 +141,7 @@ include 'dbconn.php';
 	</div>
 
 	<div id="div-1-c">
-	<small><a href='wishList.php'><?=$name.(endsWith($name,'s') ? "" : "s")?> önskelista</a></small>
+	<small><a href='wishList.php'><?=$name.(endsWith($name,'s') ? "" : "s")?> Ã¶nskelista</a></small>
 
 	</div>
 </div>
