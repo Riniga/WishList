@@ -1,8 +1,5 @@
 <?php
-    $hostname="[HOSTNAME]";
-    $database="[DATABASE]";
-    $username="[USERNAME]";
-    $password="[PASSWORD]";
+    include 'settings.php';
 
 	if(!mysql_connect($hostname,$username, $password))
 	{
