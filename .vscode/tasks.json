@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "command": "Open in Chrome",    
+    "windows": {
+        "command": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+    },
+    "args": [
+        "http://localhost:99/wishList.php"
+    ],
+    "problemMatchers": []
+}
