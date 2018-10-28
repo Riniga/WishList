@@ -1,5 +1,6 @@
 <?php
-$hostname="hostname";
-$username="username";
-$password="password";
+    $hostname="mydb19.surftown.se";
+    $database="linux_testjulklapp";
+    $username="linux_julklapp";
+    $password="zvSmJKrCYq3m";
 ?>

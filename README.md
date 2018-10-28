@@ -9,7 +9,8 @@ It needs some authentication with profile and memebership management.
 
 
 Todo:
-*Redesign login.php for to be mobile friendly
+*rename index.php till index.html using the api instead
+*apply design on wishlist (waiting for respons...)
 
 
 Done:
@@ -17,3 +18,4 @@ Done:
 *Change the source folder name to match the site url. 
 *Add the settings.php to .gitignore
 *Simplify robots.txt to disallow everything
+*Redesign login.php for to be mobile friendly

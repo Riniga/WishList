@@ -2,7 +2,7 @@
 session_start(); //we're using sessions so this is required!
 
 if($_SESSION['loggedin'] == FALSE) {
-	header('location: login.php'); //members area
+	header('location: index.php'); //members area
 }
 
 include 'dbconn.php';
@@ -10,23 +10,23 @@ include 'dbconn.php';
 
 <html>
 <head>
-<title>Önskelistan</title>
+<title>ï¿½nskelistan</title>
 <link href="wishlist.css" rel="stylesheet" type="text/css">	
 </head>
 	
 	<div id="div-1">
 	<div id="div-1-main">
 	<body>
-	<h1><?='Önskelistan'?></h1>
+	<h1><?='ï¿½nskelistan'?></h1>
 		
-		<?='Här kan du se en samlad lista över önskningar du reserverat'?><br>
-		<?='att köpa. När du köpt en present kan du klicka på present'?><br>
-		<?='ikonen så den blir struken från listan.'?><br> 
-		<?='(Det går bra att ångra gjorda val såsom reservationer samt köp)'?>
+		<?='Hï¿½r kan du se en samlad lista ï¿½ver ï¿½nskningar du reserverat'?><br>
+		<?='att kï¿½pa. Nï¿½r du kï¿½pt en present kan du klicka pï¿½ present'?><br>
+		<?='ikonen sï¿½ den blir struken frï¿½n listan.'?><br> 
+		<?='(Det gï¿½r bra att ï¿½ngra gjorda val sï¿½som reservationer samt kï¿½p)'?>
 	<?
 	$name = $_SESSION['name'];
 	?>
-	<p><h2><?=$name.(endsWith($name,'s') ? "" : "s").' inköpslista'?></br>
+	<p><h2><?=$name.(endsWith($name,'s') ? "" : "s").' inkï¿½pslista'?></br>
 	<a href="wishList.php?do=logout"><small>[logout]</small></a></h2>
 	
 	<div id="div-1-main-left">
@@ -36,11 +36,11 @@ include 'dbconn.php';
 				<td><img src=img/blank.gif width=10 height=25></td>
 				<td class=tabhead><img src=img/blank.gif width=50 height=6><br> <b>Namn</b></td>
  				<td class=tabhead><img src=img/blank.gif width=10 height=6><br> </td>
-				<td class=tabhead><img src=img/blank.gif width=80 height=6><br> <b>Önskan</b></td>
+				<td class=tabhead><img src=img/blank.gif width=80 height=6><br> <b>ï¿½nskan</b></td>
  				<td class=tabhead><img src=img/blank.gif width=10 height=6><br> </td>
 				<td class=tabhead><img src=img/blank.gif width=50 height=6><br> <b>Avboka</b></td>
  				<td class=tabhead><img src=img/blank.gif width=10 height=6><br> </td>
- 				<td class=tabhead><img src=img/blank.gif width=10 height=6><br> <b>Köpt</b></td>
+ 				<td class=tabhead><img src=img/blank.gif width=10 height=6><br> <b>Kï¿½pt</b></td>
 				<td><img src=img/blank.gif width=10 height=25></td>
 			</tr>
 	<?
@@ -141,7 +141,7 @@ include 'dbconn.php';
 	</div>
 
 	<div id="div-1-c">
-	<small><a href='wishList.php'><?=$name.(endsWith($name,'s') ? "" : "s")?> önskelista</a></small>
+	<small><a href='wishList.php'><?=$name.(endsWith($name,'s') ? "" : "s")?> ï¿½nskelista</a></small>
 
 	</div>
 </div>

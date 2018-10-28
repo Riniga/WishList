@@ -23,7 +23,7 @@ if($amount_found > 0) {
 }else{
 	$login_attempt = 0; //invalid login attempt
 	$_SESSION['username'] = $username;
-	header('location: login.php'); //login again
+	header('location: index.php'); //login again
 }
 
 ?>

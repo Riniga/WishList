@@ -4,7 +4,7 @@ session_start(); //we're using sessions so this is required!
 include 'dbconn.php';
 
 if($_SESSION['loggedin'] == FALSE) {
-	header('location: login.php'); //members area
+	header('location: index.php'); //members area
 }
 
 if($_POST['keyword'] != "" ) {
@@ -22,7 +22,7 @@ if($_POST['keyword'] != "" ) {
 ?>
 <html>
 <head>
-<title>Önskelistan</title>
+<title>ï¿½nskelistan</title>
 <link href="wishlist.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -30,12 +30,12 @@ if($_POST['keyword'] != "" ) {
 <div id="div-1-main">
 
 <body>
-<h1><?='Önskelistan'?></h1>
+<h1><?='ï¿½nskelistan'?></h1>
 
-<?='För att göra din önskelista tillgänglig för övriga i'?><br>
-<?='din familj måste du lägga till ett gemensamt nyckel-ord'?><br>
-<?='som ni gemensamt kommit överens om. Alla som angett detta'?><br>
-<?='ord kommer kunna ta del av varandras önskelistor'?>
+<?='Fï¿½r att gï¿½ra din ï¿½nskelista tillgï¿½nglig fï¿½r ï¿½vriga i'?><br>
+<?='din familj mï¿½ste du lï¿½gga till ett gemensamt nyckel-ord'?><br>
+<?='som ni gemensamt kommit ï¿½verens om. Alla som angett detta'?><br>
+<?='ord kommer kunna ta del av varandras ï¿½nskelistor'?>
 
 <h2>Ange familjens nyckel-ord</h2>
 
