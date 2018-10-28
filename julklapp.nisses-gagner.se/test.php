@@ -2,26 +2,31 @@
 function PrintTheRequest($value)
 {
 	echo "<div>Printing the result</div>";
-	echo "<div>Request innehåller i klartext: " . $value . "</div>";
+	echo "<div>Request innehÃ¥ller i klartext: " . $value . "</div>";
 	echo "<div>konverterad med htmlentities: " . htmlentities($value). "</div>";
 	echo "<div>konverterad med htmlentities med parametrar: " . htmlentities($value , ENT_QUOTES, 'UTF-8'). "</div>";
 }
 function StoreTextValueToDatabase($value)
 {
-	include 'dbconn.php';	
+	include 'dbconn.php';
 	mysql_query("INSERT INTO test (text) VALUES('".$value."');");
 	mysql_query("INSERT INTO wishlists (wish,link,userid) VALUES('".$value."','".$value."',1);");
-	
 }
 ?>
 
 <html>
-<head><title>Önskelistan - Testsida - 20180926</title><link href="wishlist.css" rel="stylesheet" type="text/css"></head>
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Privat Ã¶nskelistaapplikation fÃ¶r oss att att fÃ¥ mÃ¶jlighet att enbart kÃ¶pa nÃ¶dvÃ¤ndiga saker till varandra.">
+	<title>JulklappsÃ¶nskelistan - Testsida - 20181028</title>
+	<link href="wishlist.css" rel="stylesheet" type="text/css">
+</head>
 <body>
-<h1>Test av encodeing för att få åäö att fungera. v1.1</h1>
+<h1>Test av encodeing fÃ¶r att fÃ¥ Ã¥Ã¤Ã¶ att fungera. v1.1</h1>
 <form action=test.php method=get>
 	<div><label for"text">Text:</Label><input type="text" name="requestedvalue"></div>
-	<div><input type=submit value="Lägg till"></div>
+	<div><input type=submit value="LÃ¤gg till"></div>
 </form>
 <article>
 	<?php
@@ -43,8 +48,7 @@ function StoreTextValueToDatabase($value)
 <?php
 if($_REQUEST['printtable']!="")
 {
-
-	include 'dbconn.php';	
+	include 'dbconn.php';
 	$result=mysql_query("SELECT testid,text FROM test");
 	if (!$result) {
 		die('Dao! Felmeddelande: ' . mysql_error() . "<br>");

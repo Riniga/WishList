@@ -22,7 +22,10 @@ if($_POST['keyword'] != "" ) {
 ?>
 <html>
 <head>
-<title>�nskelistan</title>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Privat önskelistaapplikation för oss att att få möjlighet att enbart köpa nödvändiga saker till varandra.">
+    <title>Julklappsönskelistan</title>
 <link href="wishlist.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -30,12 +33,12 @@ if($_POST['keyword'] != "" ) {
 <div id="div-1-main">
 
 <body>
-<h1><?='�nskelistan'?></h1>
+<h1><?='önskelistan'?></h1>
 
-<?='F�r att g�ra din �nskelista tillg�nglig f�r �vriga i'?><br>
-<?='din familj m�ste du l�gga till ett gemensamt nyckel-ord'?><br>
-<?='som ni gemensamt kommit �verens om. Alla som angett detta'?><br>
-<?='ord kommer kunna ta del av varandras �nskelistor'?>
+<?='För att göra din önskelista tillgänglig för övriga i'?><br>
+<?='din familj måste du lägga till ett gemensamt nyckel-ord'?><br>
+<?='som ni gemensamt kommit överens om. Alla som angett detta'?><br>
+<?='ord kommer kunna ta del av varandras önskelistor'?>
 
 <h2>Ange familjens nyckel-ord</h2>
 

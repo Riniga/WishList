@@ -1,4 +1,4 @@
-﻿<? 
+<? 
     #include("../../xampp/langsettings.php");
     session_start();
     if($_SESSION['loggedin'] == TRUE) { header('location: wishList.php'); }
