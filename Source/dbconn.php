@@ -7,4 +7,7 @@ if(!mysql_connect($sqlhostname,$sqlusername, $sqlpassword))
 	die();
 }
 mysql_select_db("linux_julklapp");
+mysql_query("SET NAMES latin1_swedish_ci");
+mysql_query("SET CHARACTER SET latin1_swedish_ci");
 ?>
+

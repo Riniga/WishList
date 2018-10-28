@@ -1,5 +1,5 @@
 <?php
-$hostname"hostname";
+$hostname="hostname";
 $username="username";
 $password="password";
 ?>
