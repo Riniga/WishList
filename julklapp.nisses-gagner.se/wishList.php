@@ -5,6 +5,7 @@
 		unset($_SESSION['loggedin']);
 		unset($_SESSION['username']);
 		unset($_SESSION['userid']);
+		unset($_SESSION['user']);
 	}
 
 	if($_SESSION['loggedin'] == FALSE) {
@@ -12,6 +13,38 @@
 	}
 
 	include 'dbconn.php';
+
+	if($_REQUEST['wish']!="")
+	{
+		StoreTextValueToDatabase($_REQUEST['wish'],$_REQUEST['link'],$_SESSION['selecteduser']);
+	}
+
+	if($_REQUEST['action']=="del")
+	{
+		mysql_query("DELETE FROM wishlists WHERE id=".round($_REQUEST['id']));
+	}
+
+	if($_REQUEST['action']=="choose")
+	{
+		if ($_REQUEST['bought'] == 0) {
+			mysql_query("UPDATE wishlists SET bought=".$_SESSION['userid']." WHERE id=".round($_REQUEST['id'])); 
+		} else {
+			mysql_query("UPDATE wishlists SET bought=0 WHERE id=".round($_REQUEST['id']));
+		}	
+	}
+	
+	if($_REQUEST['action']=="edit")
+	{
+		$edit = TRUE;
+		$editId = $_REQUEST['id'];
+	} else {
+		$edit = FALSE;
+	}
+	
+	if($_REQUEST['editWish']!="")
+	{
+		UpdateTextValueToDatabase($_REQUEST['editWish'],$_REQUEST['editLink'],$_REQUEST['wishId']);
+	}
 ?>
 
 <html>
@@ -30,7 +63,7 @@
 		Skapa din egen önskelista och se vad din familj önskar sig.<br>
 		Bocka av det du tänker köpa. Du ser ej vad andra har.<br>
 		bockat av, reserverat, på din egen lista.<br>
-		<?
+		<?php
 			if($_POST['selectedUser'] != "") {
 			$_SESSION['selecteduser']=$_POST['selectedUser'];
 			}
@@ -50,7 +83,7 @@
 			}
 		?>
 		
-		<h2><?=$name.(endsWith($name,'s') ? "" : "s").' önskelista'?></br>
+		<h2><?php echo $name.(endsWith($name,'s') ? "" : "s").' önskelista'?></br>
 		<a href="wishList.php?do=logout"><small>[logout]</small></a></h2>
 	
 		<div id="div-1-main-left">
@@ -58,57 +91,20 @@
 				<tr bgcolor=#f87820>
 					<td><img src=img/blank.gif width=10 height=25></td>
 					<td class=tabhead><img src=img/blank.gif width=200 height=6><br> <b><?='önskan'?></b></td>
-					<?
-					if($logedinuser) {
-						echo "<td class=tabhead><img src=img/blank.gif width=50 height=6><br> <b>Ta bort</b></td>";
-					} else {
-						echo "<td class=tabhead><img src=img/blank.gif width=50 height=6><br><span colspan=2><b>Reservera</b></span></td>";
-					}
-					echo "<td class=tabhead><img src=img/blank.gif width=5 height=6></td>";
+					<?php
+						if($logedinuser) {
+							echo "<td class=tabhead><img src=img/blank.gif width=50 height=6><br> <b>Ta bort</b></td>";
+						} else {
+							echo "<td class=tabhead><img src=img/blank.gif width=50 height=6><br><span colspan=2><b>Reservera</b></span></td>";
+						}
+						echo "<td class=tabhead><img src=img/blank.gif width=5 height=6></td>";
 					?>
 					<td><img src=img/blank.gif width=10 height=25></td>
 				</tr>
-				<?
-					if($_REQUEST['wish']!="")
-					{
-						StoreTextValueToDatabase($_REQUEST['wish'],$_REQUEST['link'],$_SESSION['selecteduser']);
-					//	PrintTheRequest($_REQUEST['wish']);
-					//	mysql_query("INSERT INTO wishlists (wish,link,userid) VALUES('".$wish."','".$link."',".$_SESSION['selecteduser'].");");
-					}
-
-					if($_REQUEST['action']=="del")
-					{
-						mysql_query("DELETE FROM wishlists WHERE id=".round($_REQUEST['id']));
-					}
-
-					if($_REQUEST['action']=="choose")
-					{
-						if ($_REQUEST['bought'] == 0) {
-							mysql_query("UPDATE wishlists SET bought=".$_SESSION['userid']." WHERE id=".round($_REQUEST['id'])); 
-						} else {
-							mysql_query("UPDATE wishlists SET bought=0 WHERE id=".round($_REQUEST['id']));
-						}	
-					}
-					
-					if($_REQUEST['action']=="edit")
-					{
-						$edit = TRUE;
-						$editId = $_REQUEST['id'];
-					} else {
-						$edit = FALSE;
-					}
-					
-					if($_REQUEST['editWish']!="")
-					{
-					//	$editW=htmlentities($_REQUEST['editWish']);
-					//	$editL=htmlentities($_REQUEST['editLink']);
-						UpdateTextValueToDatabase($_REQUEST['editWish'],$_REQUEST['editLink'],$_REQUEST['wishId']);
-					//	mysql_query("UPDATE wishlists SET wish='".$editW."', link='".$editL."' WHERE id='".$_REQUEST['wishId']."'");
-					}
-					
+				
+				<?php
 					$result=mysql_query("SELECT id,wish,bought,link,userid FROM wishlists WHERE userid=".$_SESSION['selecteduser']." ORDER BY wish;");
 
-					// Check result
 					if (!$result) {
 						// This shows the actual query sent to MySQL, and the error. Useful for debugging.
 						$message  = 'Invalid query: ' . mysql_error() . "\n";
@@ -117,8 +113,7 @@
 					}
 					
 					// Retrive the familyid for selected user
-					// TODO: Requires review by Daniel after update from Rickard
-					$query = mysql_query("SELECT familyid FROM users WHERE userid=".$_SESSION['selecteduser']); // Try to store selected familyid in session to remove db-query!!!
+					$query = mysql_query("SELECT familyid FROM users WHERE userid=".$_SESSION['selecteduser']); 
 					$selectedUser = mysql_fetch_array($query);
 						
 					$i=0;
@@ -180,11 +175,13 @@
 					echo "</tr>";
 					echo "</table>";
 
-					if(($selectedUser['familyid'] == $_SESSION['userid']) && !$logedinuser) {?>
-						<a href="wishList.php?redigera=true">Redigera?</a>
-					<?}
+					if(($selectedUser['familyid'] == $_SESSION['userid']) && !$logedinuser) 
+					{
+						echo "<a href=\"wishList.php?redigera=true\">Redigera?</a> ";
+					}
 					
-					if ($logedinuser) {
+					if ($logedinuser) 
+					{
 						echo "<small><a href='shoppingList.php'>".$name.(endsWith($name,'s') ? "" : "s")." inköpslista</a></small>";
 						
 						$select_keyword = mysql_query("SELECT COUNT(userid) AS amount FROM relatives WHERE userid='".$_SESSION['userid']."'");
@@ -204,7 +201,7 @@
 		<div id="div-1-main-right">
 			<form action=wishList.php method=post>
 				<select size="16" style="width:100px" name="selectedUser" onChange="this.form.submit()">
-					<?
+					<?php
 						$userList=mysql_query("SELECT u.userid,u.name,u.familyid FROM users as u, relatives as r WHERE r.keyword in (SELECT keyword FROM relatives WHERE userid =".$_SESSION['userid'].") AND u.userid = r.userid ORDER by u.familyid,u.userid LIMIT 0, 30 ");
 			
 						while($user=mysql_fetch_array($userList)) {
@@ -218,49 +215,53 @@
 		</div>
 
 		<div id="div-1-c">
-			<?
-			if($logedinuser || ($selectedUser['familyid'] == $_SESSION['userid'])) {
-				
-				if($edit) {
-
-				$query = mysql_query("SELECT wish,link FROM wishlists WHERE id='".$editId."'");
-				$wishToEdit = mysql_fetch_array($query);
-				?>
+			<?php
+				if($logedinuser || ($selectedUser['familyid'] == $_SESSION['userid'])) {
 					
-				<form action=wishList.php name=edit method=get>
-					<input type=hidden name=wishId value=<?=$editId?>>
-					<table border=0 cellpadding=2 cellspacing=0>
-						<tr>
-							<td style="text-align:right">önskan:</td><td><input class=edit type=text size=40 name=editWish value=<?=$wishToEdit['wish']?>></td>
-						</tr>
-						<tr>
-							<td style="text-align:right">ev. Länk:</td><td><input class=edit type=url size=40 name=editLink value=<?=$wishToEdit['link']?>></td>
-						</tr>
-						<tr>
-							<td></td><td><input type=submit border=0 name=editWishList value="Uppdatera"></td>
-						</tr>
-					</table>
-				</form>
+					if($edit) 
+					{
+						$query = mysql_query("SELECT wish,link FROM wishlists WHERE id='".$editId."'");
+						$wishToEdit = mysql_fetch_array($query);
+						?>
+						
+						<form action=wishList.php name=edit method=get>
+							<input type=hidden name=wishId value=<?=$editId?>>
+							<table border=0 cellpadding=2 cellspacing=0>
+								<tr>
+									<td style="text-align:right">önskan:</td><td><input class=edit type=text size=40 name=editWish value=<?=$wishToEdit['wish']?>></td>
+								</tr>
+								<tr>
+									<td style="text-align:right">ev. Länk:</td><td><input class=edit type=url size=40 name=editLink value=<?=$wishToEdit['link']?>></td>
+								</tr>
+								<tr>
+									<td></td><td><input type=submit border=0 name=editWishList value="Uppdatera"></td>
+								</tr>
+							</table>
+						</form>
+						
+						<?php 
+					} 
+					else 
+					{ ?>
 				
-				<? } else {?>
-				
-				<form action=wishList.php method=get>
-					<input type=hidden name=usrid value=<?=$usrid?>>
-					<table border=0 cellpadding=2 cellspacing=0>
-						<tr>
-							<td style="text-align:right">önskan:</td><td><input type=text size=40 name=wish></td>
-						</tr>
-						<tr>
-							<td style="text-align:right">ev. Länk:</td><td><input type=url size=40 name=link></td>
-						</tr>
-						<tr>
-							<td></td><td><input type=submit border=0 name=wishlist value="Lägg till"></td>
-						</tr>
-					</table>
-				</form>
-				
-			<?	} 
-			}?>
+						<form action=wishList.php method=get>
+							<input type=hidden name=usrid value=<?=$usrid?>>
+							<table border=0 cellpadding=2 cellspacing=0>
+								<tr>
+									<td style="text-align:right">önskan:</td><td><input type=text size=40 name=wish></td>
+								</tr>
+								<tr>
+									<td style="text-align:right">ev. Länk:</td><td><input type=url size=40 name=link></td>
+								</tr>
+								<tr>
+									<td></td><td><input type=submit border=0 name=wishlist value="Lägg till"></td>
+								</tr>
+							</table>
+						</form>
+						<?php 
+					}
+				} 
+			?>
 
 		</div>
 	</div>

@@ -26,7 +26,7 @@ include 'dbconn.php';
 		<?='att köpa. När du köpt en present kan du klicka på present'?><br>
 		<?='ikonen så den blir struken från listan.'?><br> 
 		<?='(Det går bra att ångra gjorda val såsom reservationer samt köp)'?>
-	<?
+	<?php
 	$name = $_SESSION['name'];
 	?>
 	<p><h2><?=$name.(endsWith($name,'s') ? "" : "s").' inköpslista'?></br>
@@ -46,7 +46,7 @@ include 'dbconn.php';
  				<td class=tabhead><img src=img/blank.gif width=10 height=6><br> <b>Köpt</b></td>
 				<td><img src=img/blank.gif width=10 height=25></td>
 			</tr>
-	<?
+	<?php
 
 	if($_REQUEST['action']=="choose")
 	{

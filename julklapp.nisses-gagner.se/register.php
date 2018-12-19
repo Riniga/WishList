@@ -39,16 +39,16 @@ if($_POST['register']) {
 <div id="div-1">
 <div id="div-1-main">
 <body>
-<h1><?='änskelistan'?></h1>
+<h1>Önskelistan</h1>
 
-<?='Skapa din egen änskelista och se vad din familj änskar sig.'?><br>
-<?='Bocka av det du tänker köpa. Du ser ej vad som är '?><br> 
-<?='avbockat på din egen lista.'?><p>
+<p>Skapa din egen änskelista och se vad din familj änskar sig.<br>
+Bocka av det du tänker köpa. Du ser ej vad som är<br> 
+avbockat på din egen lista.<p>
 
 <form action=register.php method=post>
 <table border=0 cellpadding=2 cellspacing=0>
 <tr><th colspan="2"><h2>Registrering</h2></th></tr>
-<tr><td style="text-align:right">Användarnamn: </td><td><input type=text size=30 name=username value=<?=$username ?>></td></tr>
+<tr><td style="text-align:right">Användarnamn: </td><td><input type=text size=30 name=username ></td></tr>
 <tr><td style="text-align:right">Lösenord: </td><td><input type="password" size=30 name=pass1></td></tr>
 <tr><td style="text-align:right">Upprepa Lösenord: </td><td><input type="password" size=30 name=pass2></td></tr>
 <tr><td style="text-align:right">Namn: </td><td><input type=text size=30 name=name value=<?=$name ?>></td></tr>
