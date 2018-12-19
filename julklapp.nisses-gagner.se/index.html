@@ -1,8 +1,3 @@
-<? 
-    #include("../../xampp/langsettings.php");
-    session_start();
-    if($_SESSION['loggedin'] == TRUE) { header('location: wishList.php'); }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,19 +23,24 @@
         <div class="container" id="Login">
             <h2>Inloggning</h2>
 
-            <form  action=validate.php method=post>
+            <form id="loginform" action="index.html">
+                    <div class="row">
+                            <div class="col-md-4 col-xs-8 text-right text-danger" id="loginResultText" ></div>
+                        </div>
+                        
                 <div class="row">
-                    <label for="name" class="col-md-2 col-xs-4 ">Användarnamn:</label>
-                    <input class="col-md-2 col-xs-4" type="text" size=30 name="namn" id="name" >
+                    <label for="username" class="col-md-2 col-xs-4 ">Användarnamn:</label>
+                    <input class="col-md-2 col-xs-4" type="text" size=30  id="username" >
                 </div>
                 <div class="row">
-                    <label for="pass"  class="col-md-2 col-xs-4">Lösenord:</label>
-                    <input class="col-md-2 col-xs-4" type="password" size=30 name="pass" id="pass">
+                    <label for="password"  class="col-md-2 col-xs-4">Lösenord:</label>
+                    <input class="col-md-2 col-xs-4" type="password" size=30  id="password">
                 </div>
                 <div class="row">
                     <div class="col-md-4 col-xs-8"> 
                         <div class="pull-right"> 
-                            <input type="submit" value="Logga in" />
+                            <input id="loginButton" type="submit" value="Logga in" />
+                            
                             <a href="register.php"> Registrera</a>
                         </div>
                     </div>

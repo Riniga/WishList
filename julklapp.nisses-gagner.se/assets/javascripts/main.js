@@ -1,24 +1,45 @@
 ﻿$(document).ready(function ()
 {
-    
-    GetCurrentUserAndRedirect();
+    if ( $( "#loginform" ).length ) GetCurrentUserAndRedirect();
 
-    // if (!sessionStorage.getItem("currentuserid"))  GetCurrentUserAndRedirect();
-    // else console.log("Inloggad användare: " + sessionStorage.getItem("currentuserid"));
-    
-    //if ($("#values").length) FillValuesListFromApi();
+
+    $( "#loginform" ).submit(function( event ) 
+    {
+        if (TryLogin($("#username").val(), $("#password").val()))
+            $("#loginResultText").text('');
+        else
+            $("#loginResultText").text('Fel användarnamn eller lösenord');
+        event.preventDefault();
+      });
+
 });
 
+function TryLogin(username, password)
+{
+    $.ajax(
+        {
+            url: "api/login.php",
+            method: "GET",
+            contentType: "application/json",
+            data: { username: username, password: password }
+        })
+        .done(function(result) 
+        {
+            if ( result.result ) 
+            {
+                document.location="wishList2.php";
+            }
+        });
+}
 
 function GetCurrentUserAndRedirect()
 {
     $.get("api/currentuser.php", function (user)
     {
-
-        console.log("Print user: " + user);
-    //    
-    //    sessionStorage.setItem("currentuserid", user);
-       //document.location="wishList.php";
+        if (user.loggedin) 
+        {
+            document.location="wishList2.php";
+        }
     });
 }
 

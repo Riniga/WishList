@@ -1,5 +1,5 @@
-<? 
-	session_start();
+<?php
+	include 'api.php';
 	session_unset();
-	echo "{result: true}";
+	echo json_encode(new Result(true));
 ?>

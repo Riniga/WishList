@@ -7,33 +7,7 @@ class User
 	public $familyid; 
 	public $iscurrentuser; 
    
-    static function TryLogin($username, $password) 
-	{ 
-		include '../dbconn.php';
-		$queryresult = mysql_query("SELECT userid,name,familyid FROM users WHERE username = '$username' AND password = '$password' ");
-		
-		if (!$queryresult) 
-		{
-			return null;
-		}
-		
-		if (mysql_num_rows($queryresult) == 0) 
-		{
-			return null;
-		}
-		
-		if ($row = mysql_fetch_assoc($queryresult))
-		{
-			$user = new User;
-			$user->username= $u;
-			$user->userid=(int)$row['userid'];
-			$user->firstname=$row['name'];
-			$user->familyid=(int)$row['familyid'];
-			$user->loggedin=true;
-			
-			return $user;
-		}
-    } 
+    
 	
 	static function GetAllUsers($currentuser) 
 	{ 
