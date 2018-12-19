@@ -1,4 +1,8 @@
 <?php
+
+require_once("/business/Loader.php");
+
+
 function PrintTheRequest($value)
 {
 	echo "<div>Printing the result</div>";
@@ -48,21 +52,15 @@ function StoreTextValueToDatabase($value)
 <?php
 if($_REQUEST['printtable']!="")
 {
-	include 'dbconn.php';
-	$result=mysql_query("SELECT testid,text FROM test");
-	if (!$result) {
-		die('Dao! Felmeddelande: ' . mysql_error() . "<br>");
-	}
-	
-	if ($result) {
-		
-	echo "<table><tr><th>Id</th><th>text</th></tr>";
+	$result = $databaseConnection->QuerySelect("SELECT testid,text FROM test");
+	if ($result) 
+	{
+		echo "<ul>";
 		while( $row=mysql_fetch_array($result) )
 		{
-			
-			echo "<tr><td>".$row['testid']."<td><td>".$row['text']."<td></tr>";
+			echo "<li>".$row['text']." (".$row['testid'].")</li>";
 		}
-		echo "</table>";
+		echo "</ul>";
 	}
 }
 

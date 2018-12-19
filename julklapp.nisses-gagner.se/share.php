@@ -4,7 +4,7 @@ session_start(); //we're using sessions so this is required!
 include 'dbconn.php';
 
 if($_SESSION['loggedin'] == FALSE) {
-	header('location: index.php'); //members area
+	header('location: index.html'); //members area
 }
 
 if($_POST['keyword'] != "" ) {

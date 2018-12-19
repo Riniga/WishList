@@ -1,9 +1,8 @@
 <?php
 	session_start();
-	include 'result.php';
-	include 'user.php';
-	include 'wish.php';
-		
+	require_once(dirname(__FILE__) . '\..\business\Loader.php' );
+	include '../model/result.php';
+	include '../model/user.php';
 		
 	$currentuser = unserialize($_SESSION['user']);
 		

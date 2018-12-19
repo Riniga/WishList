@@ -21,7 +21,7 @@ if($_POST['register']) {
 		if(mysql_query("INSERT INTO users (username,password,name,lastname,familyid) VALUES('$username','$password','$name','$lastname',0)")) {
 			$lastInsertId=mysql_insert_id();
 			mysql_query("UPDATE users SET familyid = ".$lastInsertId." WHERE userid = ".$lastInsertId);
-			header('location: /index.php'); //to login
+			header('location: /index.html'); //to login
 		}
 	}
 }
@@ -57,7 +57,7 @@ avbockat på din egen lista.<p>
 </table>
 </form>
 
-<a href="index.php"><small>Till inloggning</small></a>
+<a href="index.html"><small>Till inloggning</small></a>
 </body>
 </div>
 </div>
