@@ -30,7 +30,7 @@ if($amount_found > 0) {
 	$user->loggedin=true;
 	$_SESSION['user'] = serialize($user);
 
-	header('location: wishList2.php'); //to the wishlist
+	header('location: wishList.php'); //to the wishlist
 }else{
 	$login_attempt = 0; //invalid login attempt
 	$_SESSION['username'] = $username;

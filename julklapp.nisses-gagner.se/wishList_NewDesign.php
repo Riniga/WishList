@@ -95,7 +95,7 @@
 				?>
 				
 				<h2><?php echo $name.(endsWith($name,'s') ? "" : "s").' önskelista'?></br>
-				<a href="wishList2.php?do=logout"><small>[logout]</small></a></h2>
+				<a href="wishList.php?do=logout"><small>[logout]</small></a></h2>
 			
 				<div id="div-1-main-left">
 					<table border=0 cellpadding=0 cellspacing=0 >
@@ -159,10 +159,10 @@
 								}
 
 								if($logedinuser || $_REQUEST['redigera']=="true") {
-									echo "<td class=tabval><a onclick=\"return confirm('Ta bort önskning?');\" href=wishList2.php?action=del&id=".$row['id']."><span class=red>[".'RADERA'."]</span></a></td>";
+									echo "<td class=tabval><a onclick=\"return confirm('Ta bort önskning?');\" href=wishList.php?action=del&id=".$row['id']."><span class=red>[".'RADERA'."]</span></a></td>";
 								} else {
 									if($_SESSION['userid'] == $row['bought'] || $row['bought'] == 0) {
-										echo "<td class=".$rowstyle."><a class='sel' onclick=\"return confirm('".$mark." ".$row['wish']." som reserverad?');\" href=wishList2.php?action=choose&id=".$row['id']."&bought=".$row['bought']."><span class=".$rowcolor.">[".'KÖPA'."]</span></a></td>";
+										echo "<td class=".$rowstyle."><a class='sel' onclick=\"return confirm('".$mark." ".$row['wish']." som reserverad?');\" href=wishList.php?action=choose&id=".$row['id']."&bought=".$row['bought']."><span class=".$rowcolor.">[".'KÖPA'."]</span></a></td>";
 									} else {
 										echo "<td class=".$rowstyle."><span class=".$rowcolor.">[".'KÖPA'."]</span></a></td>";
 									}
@@ -172,7 +172,7 @@
 									
 								if($logedinuser || ($selectedUser['familyid'] == $_SESSION['userid'])) {
 									echo "<td class=tabval><a onclick=\"return confirm('Redigera denna önskning?\\n".$row["wish"]."')
-										;\" href=wishList2.php?action=edit&id=".$row['id']."><img src=img/edit.gif></a></td>";
+										;\" href=wishList.php?action=edit&id=".$row['id']."><img src=img/edit.gif></a></td>";
 								} else {
 									echo "<td class=tabval></td>";
 								}
@@ -188,7 +188,7 @@
 
 							if(($selectedUser['familyid'] == $_SESSION['userid']) && !$logedinuser) 
 							{
-								echo "<a href=\"wishList2.php?redigera=true\">Redigera?</a> ";
+								echo "<a href=\"wishList.php?redigera=true\">Redigera?</a> ";
 							}
 							
 							if ($logedinuser) 
@@ -210,7 +210,7 @@
 				</div>
 
 				<div id="div-1-main-right">
-					<form action=wishList2.php method=post>
+					<form action=wishList.php method=post>
 						<select style="width:100px" name="selectedUser" onChange="this.form.submit()">
 							<?php
 								$userList=mysql_query("SELECT u.userid,u.name,u.familyid FROM users as u, relatives as r WHERE r.keyword in (SELECT keyword FROM relatives WHERE userid =".$_SESSION['userid'].") AND u.userid = r.userid ORDER by u.familyid,u.userid LIMIT 0, 30 ");
@@ -235,7 +235,7 @@
 								$wishToEdit = mysql_fetch_array($query);
 								?>
 								
-								<form action=wishList2.php name=edit method=get>
+								<form action=wishList.php name=edit method=get>
 									<input type=hidden name=wishId value=<?=$editId?>>
 									<table border=0 cellpadding=2 cellspacing=0>
 										<tr>
@@ -255,7 +255,7 @@
 							else 
 							{ ?>
 						
-								<form action=wishList2.php method=get>
+								<form action=wishList.php method=get>
 									<input type=hidden name=usrid value=<?=$usrid?>>
 									<table border=0 cellpadding=2 cellspacing=0>
 										<tr>

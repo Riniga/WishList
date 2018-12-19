@@ -27,7 +27,7 @@ function TryLogin(username, password)
         {
             if ( result.result ) 
             {
-                document.location="wishList2.php";
+                document.location="wishList.php";
             }
         });
 }
@@ -38,7 +38,7 @@ function GetCurrentUserAndRedirect()
     {
         if (user.loggedin) 
         {
-            document.location="wishList2.php";
+            document.location="wishList.php";
         }
     });
 }
