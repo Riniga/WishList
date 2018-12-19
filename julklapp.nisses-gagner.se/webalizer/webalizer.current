@@ -1,0 +1,349 @@
+# Webalizer V2.23-08 Incremental Data - 12/19/2018 00:55:46
+2018 12 19 0 55 46
+1974 1085 38 23 11 25 33162422 123 75 0
+1 37 85 1 19
+170 74 449581 5 14 7
+53 30 587661 4 3 3
+62 30 174788 2 3 2
+91 42 87500 5 6 4
+102 52 1384640 3 5 3
+59 33 1338932 5 6 4
+96 59 2877895 4 6 4
+153 86 3561623 1 8 3
+271 141 1257348 2 14 5
+113 74 5186843 8 10 7
+70 38 183805 4 3 2
+55 28 66416 2 2 2
+86 64 5382729 5 9 5
+148 87 4085970 3 9 6
+133 72 709811 3 8 4
+119 63 1615103 6 3 3
+80 49 2001976 4 8 6
+76 45 2167322 2 5 4
+37 18 42479 1 1 1
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+59 30 70127 1
+5 4 106311 1
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+56 31 707409 1
+2 2 1264 1
+46 20 569758 5
+36 20 217787 6
+118 78 4239264 8
+102 56 1608238 3
+132 69 1029711 10
+106 55 1594174 9
+185 106 3079901 9
+217 119 5013737 15
+44 22 1209329 6
+191 117 5022030 7
+70 32 66867 4
+112 58 696340 10
+222 111 1143293 11
+46 29 2370986 5
+157 91 4055280 10
+68 35 360616 1
+0
+0
+0
+1085
+0
+0
+0
+0
+0
+0
+0
+0
+138
+0
+99
+0
+0
+0
+0
+0
+0
+652
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+# -urls- 
+/register.php
+0 3 0 2085 0 0
+/login.php
+0 2 0 1266 0 0
+/img/gift1.jpeg
+0 10 0 17544 0 0
+/assets/images/header.png
+0 33 0 10803624 0 0
+/addMember.php
+0 1 0 634 0 0
+/assets/fonts/permanent-marker.woff2
+0 34 0 590080 0 0
+/.well-known/acme-challenge/dpL1CVidizT87ko_m8axhgXg398y5lULc00uGQDtqzY
+0 1 0 87 0 0
+/img/pergament_medium.gif
+0 29 0 3867906 0 0
+/wishlist.css
+0 26 0 15504 0 0
+/favicon.ico
+0 43 0 3037437 0 0
+/img/edit.gif
+0 32 0 29175 0 0
+/assets/javascripts/countdown.js
+0 27 0 30609 0 0
+/assets/javascripts/main.js
+0 29 0 10005 0 0
+/assets/images/footer.png
+0 30 0 12897000 0 0
+/.well-known/acme-challenge/challenge_test.html
+0 2 0 0 1 0
+/wishList.php
+0 591 0 1143844 0 0
+/img/blank.gif
+0 29 0 946 0 0
+/shoppingList.php
+0 52 0 121202 0 0
+/
+0 86 0 109155 73 44
+/api/currentuser.php
+0 85 0 0 0 0
+/robots.txt
+0 5 0 135 0 0
+/assets/styles/site.css
+0 33 0 15625 0 0
+/.well-known/acme-challenge/vmIkrMEFf_62taKUW13D6KjDvT22gwGDzAJ6r_RSE1Y
+0 1 0 87 0 0
+# End Of Table - urls
+# -sites- (monthly)
+host-217-214-149-140.mobileonline.telia.com
+0 19 15 1403185 1 1544716067
+/
+host-78-64-46-245.homerun.telia.com
+0 25 19 2052165 1 1544714845
+/
+planetlab5.net.in.tum.de
+0 4 0 0 3 1544739624
+/
+81-232-187-241-no2300.tbcn.telia.com
+0 147 74 1830656 5 1544826996
+/
+host-95-195-220-214.mobileonline.telia.com
+0 9 5 8169 1 1545060096
+/
+81-237-182-150-no2480.tbcn.telia.com
+0 56 34 1550612 1 1544979925
+/
+c-5eea2988-74736162.cust.telenor.se
+0 18 6 11322 1 1543676467
+/
+94.191.151.208.bredband.tre.se
+0 9 4 8643 1 1544883888
+/
+msnbot-157-55-39-14.search.msn.com
+0 1 1 27 0 0
+-
+host-90-236-224-27.mobileonline.telia.com
+0 219 128 3584699 7 1545062638
+/
+crawl-66-249-75-4.googlebot.com
+0 1 1 27 0 0
+-
+ws49.surf-town.net
+0 2 2 0 1 1544519475
+/.well-known/acme-challenge/challenge_test.html
+209.97.145.57
+0 1 0 1485 1 1544445873
+/
+185-9-62-112.bredbandstjanster.se
+0 42 26 1328744 1 1544093978
+/
+host-95-192-12-79.mobileonline.telia.com
+0 29 20 1415776 1 1544451066
+/
+81-236-224-246-no51.tbcn.telia.com
+0 222 111 476091 5 1545180695
+/
+host-90-236-208-30.mobileonline.telia.com
+0 19 11 1187570 1 1544026155
+/
+159.203.69.123
+0 1 0 1485 1 1544444968
+/
+81-224-64-240-no51.tbcn.telia.com
+0 71 44 2669812 2 1544477681
+/
+host-217-214-150-155.mobileonline.telia.com
+0 1 1 1637 0 0
+-
+msnbot-157-55-39-6.search.msn.com
+0 2 2 54 0 0
+-
+msnbot-157-55-39-5.search.msn.com
+0 1 1 27 0 0
+-
+78-70-26-192-no180.tbcn.telia.com
+0 618 337 8448388 21 1545164880
+/
+host-217-214-150-60.mobileonline.telia.com
+0 21 16 1406206 1 1544437349
+/
+94.191.147.91.bredband.tre.se
+0 7 6 9231 0 0
+-
+81-237-192-158-no217.tbcn.telia.com
+0 49 24 58719 2 1543927629
+/
+c-5eea2a4e-74736162.cust.telenor.se
+0 31 22 1416821 1 1544205107
+/
+94.191.158.154.bredband.tre.se
+0 25 8 17779 1 1544993565
+/
+c-5eea2ecb-74736162.cust.telenor.se
+0 21 5 8982 1 1543676462
+/
+host-90-236-49-63.mobileonline.telia.com
+0 52 27 484623 3 1543790322
+/
+outbound1.letsencrypt.org
+0 2 2 174 0 0
+-
+host-217-214-146-236.mobileonline.telia.com
+0 8 5 436066 1 1545051390
+/
+c-5eea2406-74736162.cust.telenor.se
+0 12 6 11764 1 1543959028
+/
+mobile.tre.se
+0 46 18 37145 2 1544992662
+/
+c-5eea2bc1-74736162.cust.telenor.se
+0 3 2 2033 1 1544195729
+/
+host-217-214-150-236.mobileonline.telia.com
+0 23 19 1462922 1 1545129716
+/
+c-c3f9225c.019-661-7570703.bbcust.telenor.se
+0 126 63 416550 3 1543737431
+/
+h88-129-225-155.cust.a3fiber.se
+0 31 20 1412833 2 1544711830
+/
+# End Of Table - sites (monthly)
+# -sites- (daily)
+81-236-224-246-no51.tbcn.telia.com
+0 37 18 42479 1 1545180695
+/
+# End Of Table - sites (daily)
+# -referrers- 
+http://julklapp.nisses-gagner.se/wishlist.css
+1 11
+http://julklapp.nisses-gagner.se/
+1 2
+http://julklapp.nisses-gagner.se/register.php
+1 9
+http://julklapp.nisses-gagner.se/addMember.php
+1 1
+http://julklapp.nisses-gagner.se/wishList.php
+1 1285
+- (Direct Request)
+0 112
+https://www.google.se/
+0 2
+http://julklapp.nisses-gagner.se/shoppingList.php
+1 125
+http://julklapp.nisses-gagner.se/login.php
+1 8
+http://julklapp.nisses-gagner.se/assets/styles/site.css
+1 33
+http://julklapp.nisses-gagner.se/index.php
+1 386
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36
+0 96
+Mozilla/5.0 (iPad; CPU OS 9_3_5 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13G36 Safari/601.1
+0 1
+Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)
+0 2
+Mozilla/5.0 (Linux; Android 8.0.0; SM-G950F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Mobile Safari/537.36
+0 15
+MobileSafari/604.1 CFNetwork/975.0.3 Darwin/18.2.0
+0 4
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36
+0 37
+Mozilla/5.0 (compatible; Let's Encrypt validation server; +https://www.letsencrypt.org)
+0 2
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+0 3
+Mozilla/5.0 (iPhone; CPU iPhone OS 12_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 
+0 124
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+0 1
+Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)
+0 4
+curl/7.55.0
+0 2
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.83 Safari/537.36
+0 5
+Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36
+0 49
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36
+0 26
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.85 Safari/537.36
+0 4
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36
+0 29
+Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Sa
+0 423
+Mozilla/5.0 (iPad; CPU OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/70.0.3538.75 Mobile/15E148 Safar
+0 31
+Mozilla/5.0 (Linux; Android 8.0.0; SAMSUNG SM-G955F Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/7.4 Ch
+0 358
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36
+0 80
+Mozilla/5.0 (Linux; Android 8.0.0; SM-G950F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Mobile Safari/537.36
+0 79
+Mozilla/5.0 (Linux; Android 8.0.0; SM-G950F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.83 Mobile Safari/537.36
+0 47
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36
+0 44
+Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Sa
+0 508
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

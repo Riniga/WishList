@@ -1,0 +1,3 @@
+php_value default_charset None
+AddDefaultCharset UTF-8
+DirectoryIndex wishList.php

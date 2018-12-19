@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<clientConfig version="1.1">
+<emailProvider id="surftown.com">
+<domain>%EMAILDOMAIN%</domain>
+<displayName>%REALNAME%</displayName>
+<displayShortName>%REALNAME%</displayShortName>
+<incomingServer type="imap">
+<hostname>mail.surftown.com</hostname>
+<port>143</port>
+<socketType>STARTTLS</socketType>
+<username>%EMAILADDRESS%</username>
+<authentication>password-cleartext</authentication>
+</incomingServer>
+<outgoingServer type="smtp">
+<hostname>mail.surftown.com</hostname>
+<port>587</port>
+<socketType>STARTTLS</socketType>
+<username>%EMAILADDRESS%</username>
+<authentication>password-cleartext</authentication>
+<addThisServer>true</addThisServer>
+<useGlobalPreferredServer>false</useGlobalPreferredServer>
+</outgoingServer>
+</emailProvider>
+</clientConfig>
